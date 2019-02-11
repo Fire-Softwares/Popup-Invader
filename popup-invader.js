@@ -41,12 +41,11 @@ SOFTWARE.
 /**************************
 *         SETTINGS        *
 **************************/
-var website = "https://cdn.fire-softwares.ga/popup-invader/?confirm=yes"; // Website that the pop-ups will browse to
-                                                                          // /!\ Redirecting to the website itself
-                                                                          // will make it replicate
-var title   = "Popup Invader by Fire-Softwares";                          // Title of the pop-up
-var size    = [200, 200];                                                 // Size of pop-ups ([width, height])
-var delay   = 2;                                                          // Delay (in milliseconds) between each pop-up
+var website = "https://tamaractalk.com/wp-content/uploads/2014/12/wtf-lol.png"; // Website that the pop-ups will browse to
+var title   = "_blank";                                                         // Title of the pop-up
+var text   = "Hi bro !";                                                        // Alert text
+var size    = [200, 200];                                                       // Size of pop-ups ([width, height])
+var delay   = 2;                                                                // Delay (in milliseconds) between each pop-up
 
 /**************************
 *        MAIN CODE        *
@@ -56,4 +55,5 @@ setInterval(function() {  // Make script run each *delay* milliseconds
                             + ",width=" + size[0]                                                         // Setting pop-up width to size[0]
                             + ",top=" + Math.floor(Math.random() * Math.floor(screen.height - size[1]))   // Setting window y to a random location in [0 ; clientHeight - popupHeight]
                             + ",left=" + Math.floor(Math.random() * Math.floor(screen.width - size[0]))); // Setting window x to a random location in [0 ; clientWidth - popupWidth]
-}, delay);
+  console.log("hello");
+}, delay, delay);

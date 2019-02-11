@@ -52,7 +52,7 @@ SOFTWARE.
     setcookie("confirm-popup-invader", "yes", time() + 86400);  // One day cookie
 
   // If user haven't already confirmed to join the website
-  if (!isset($_COOKIE["confirm-popup-invader"]) || !(isset($_GET["confirm"]) && $_GET["confirm"] == "yes")):
+  if (!isset($_COOKIE["confirm-popup-invader"]) && !(isset($_GET["confirm"]) && ($_GET["confirm"] == "yes"))):
 ?>
   <body>
     <!-- Just a warning -->
