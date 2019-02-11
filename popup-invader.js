@@ -51,7 +51,7 @@ var delay   = 2;                                                                
 *        MAIN CODE        *
 **************************/
 setInterval(function() {  // Make script run each *delay* milliseconds
-  window.open(website, title, "height=" + size[1]                                                         // Setting pop-up height to size[1]
+  var v = window.open(website, title, "height=" + size[1]                                                 // Setting pop-up height to size[1]
                             + ",width=" + size[0]                                                         // Setting pop-up width to size[0]
                             + ",top=" + Math.floor(Math.random() * Math.floor(screen.height - size[1]))   // Setting window y to a random location in [0 ; clientHeight - popupHeight]
                             + ",left=" + Math.floor(Math.random() * Math.floor(screen.width - size[0]))); // Setting window x to a random location in [0 ; clientWidth - popupWidth]
