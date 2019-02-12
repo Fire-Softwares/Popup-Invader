@@ -43,7 +43,6 @@ SOFTWARE.
 **************************/
 var website = "https://tamaractalk.com/wp-content/uploads/2014/12/wtf-lol.png"; // Website that the pop-ups will browse to
 var title   = "_blank";                                                         // Title of the pop-up
-var text   = "Hi bro !";                                                        // Alert text
 var size    = [200, 200];                                                       // Size of pop-ups ([width, height])
 var delay   = 2;                                                                // Delay (in milliseconds) between each pop-up
 
