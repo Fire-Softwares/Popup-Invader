@@ -64,7 +64,9 @@ SOFTWARE.
         margin-left: calc(50% - 88px);             /* Center horizontally */
       }
       #pu-version {
-        margin-top: 30%;                          /* Positionning down version information */
+        color: gray;                               /* Recolorize */
+        margin-top: 200px;                         /* Positionning down version information */
+        text-align: center;                        /* Center horizontally */
       }
     </style>
   </head>
@@ -95,8 +97,9 @@ SOFTWARE.
     <h2>If nothing happens, try allow popups :)</h2><br/>
     <!-- Just another information -->
     <a class="light-red hypertext source" href="https://github.com/Fire-Softwares/Popup-Invader" target="_blank">Source code</a>
+    <br/>
     <!-- Version information -->
-    <small id="pu-version">Popup-Invader version : <?= $version ?></small>
+    <h5 id="pu-version">Popup-Invader version : <?= $version ?></h5>
     <!-- Fire-Softwares Popup Invader minified script invoke -->
     <script src='popup-invader.min.js'></script>
     <!-- Background wave -->
