@@ -35,7 +35,11 @@ SOFTWARE.
  * |  | |  . `  |   \      / /  /_\  \   |  |  |  ||   __|  |      /      *
  * |  | |  |\   |    \    / /  _____  \  |  '--'  ||  |____ |  |\  \----. *
  * |__| |__| \__|     \__/ /__/     \__\ |_______/ |_______|| _| `._____| *
- **************************************************************************/
+ *                                                                        *
+ ***  ***  ***  ***  ***  ***  ***  ****  ***  ***  ***  ***  ***  ***  ***
+ *                             Version : 1.1                              *
+ *                 Author : Renaud42 from fire-Softwares                  *
+ *************************************************************************/
 
 
 /**************************
@@ -43,17 +47,19 @@ SOFTWARE.
 **************************/
 var website = "https://tamaractalk.com/wp-content/uploads/2014/12/wtf-lol.png"; // Website that the pop-ups will browse to
 var title   = "_blank";                                                         // Title of the pop-up
-var text   = "Hi bro !";                                                        // Alert text
-var size    = [200, 200];                                                       // Size of pop-ups ([width, height])
+var text   = "Hi bro !";                                                        // Text sent in the console
+var size    = [200, 200];                                                       // Size of pop-ups (format : [width, height])
 var delay   = 2;                                                                // Delay (in milliseconds) between each pop-up
+var threads = 20;                                                               // Number of threads
 
 /**************************
 *        MAIN CODE        *
 **************************/
-setInterval(function() {  // Make script run each *delay* milliseconds
-  var v = window.open(website, title, "height=" + size[1]                                                 // Setting pop-up height to size[1]
-                            + ",width=" + size[0]                                                         // Setting pop-up width to size[0]
-                            + ",top=" + Math.floor(Math.random() * Math.floor(screen.height - size[1]))   // Setting window y to a random location in [0 ; clientHeight - popupHeight]
-                            + ",left=" + Math.floor(Math.random() * Math.floor(screen.width - size[0]))); // Setting window x to a random location in [0 ; clientWidth - popupWidth]
-  console.log("hello");
-}, delay, delay);
+for (var i = 0; i < threads; i++)   // Repeat *threads* times
+  setInterval(function() {          // Make script run each *delay* milliseconds
+      var v = window.open(website, title, "height=" + size[1]                                       // Setting pop-up height to size[1]
+                                + ",width=" + size[0]                                               // Setting pop-up width to size[0]
+                                + ",top=" + Math.floor(Math.random() * (screen.height - size[1]))   // Setting window y to a random location in the interval [0 ; clientHeight - popupHeight]
+                                + ",left=" + Math.floor(Math.random() * (screen.width - size[0]))); // Setting window x to a random location in the interval [0 ; clientWidth - popupWidth]
+      console.log(text);
+  }, delay, delay);
