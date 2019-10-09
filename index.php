@@ -20,7 +20,27 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -->
-<!-- POPUP-INVADER -->
+<!--
+ **************************************************************************
+ *           .______     ______   .______    __    __  .______            *
+ *          |   _  \   /  __  \  |   _  \  |  |  |  | |   _  \            *
+ *          |  |_)  | |  |  |  | |  |_)  | |  |  |  | |  |_)  |           *
+ *          |   ___/  |  |  |  | |   ___/  |  |  |  | |   ___/            *
+ *          |  |      |  `--'  | |  |      |  `--'  | |  |                *
+ *          | _|       \______/  | _|       \______/  | _|                *
+ *                                                                        *
+ *  __  .__   __. ____    ____  ___       _______   _______ .______       *
+ * |  | |  \ |  | \   \  /   / /   \     |       \ |   ____||   _  \      *
+ * |  | |   \|  |  \   \/   / /  ^  \    |  .--.  ||  |__   |  |_)  |     *
+ * |  | |  . `  |   \      / /  /_\  \   |  |  |  ||   __|  |      /      *
+ * |  | |  |\   |    \    / /  _____  \  |  '--'  ||  |____ |  |\  \----. *
+ * |__| |__| \__|     \__/ /__/     \__\ |_______/ |_______|| _| `._____| *
+ *                                                                        *
+ ***  ***  ***  ***  ***  ***  ***  ****  ***  ***  ***  ***  ***  ***  ***
+ *                             Version : 1.1                              *
+ *                 Author : Renaud42 from fire-Softwares                  *
+ **************************************************************************
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,10 +63,16 @@ SOFTWARE.
         font-size: 32px;                           /* Increasing font size */
         margin-left: calc(50% - 88px);             /* Center horizontally */
       }
+      #pu-version {
+        margin-top: 30%;                          /* Positionning down version information */
+      }
     </style>
   </head>
 
 <?php
+  // Popup-Invader version
+  $version = 1.1
+
   // If user confirmed to join the website
   if (isset($_GET["confirm"]) && $_GET["confirm"] == "yes")
     setcookie("confirm-popup-invader", "yes", time() + 86400);  // One day cookie
@@ -69,23 +95,20 @@ SOFTWARE.
     <h2>If nothing happens, try allow popups :)</h2><br/>
     <!-- Just another information -->
     <a class="light-red hypertext source" href="https://github.com/Fire-Softwares/Popup-Invader" target="_blank">Source code</a>
-    <!-- Fire-Softwares Popup Invader script invoke -->
-    <script src='popup-invader.js'></script>
+    <!-- Version information -->
+    <small id="pu-version">Popup-Invader version : <?= $version ?></small>
+    <!-- Fire-Softwares Popup Invader minified script invoke -->
+    <script src='popup-invader.min.js'></script>
     <!-- Background wave -->
     <script>
       var x1 = .0, x2 = .25, x3 = .5; // x Sinus
       var red, green, blue;           // RGB vars
 
       setInterval(function() {
-        red = Math.sin(x1);
-        green = Math.sin(x2);
-        blue = Math.sin(x3);
-
-        x1 += .04;
-        x2 += .02;
-        x3 += .01;
-
-        document.body.style.backgroundColor = "rgb(" + (191 + red * 64)  + ", " + (191 + green * 64) + ", " + (191 + blue * 64) + ")";
+        red = Math.sin(x1 += .04);    // Red next value
+        green = Math.sin(x2 += .02);  // Green next value
+        blue = Math.sin(x3 += .01);   // Blue next value
+        document.body.style.backgroundColor = "rgb(" + (191 + red * 64)  + ", " + (191 + green * 64) + ", " + (191 + blue * 64) + ")";  // Setting background color
       }, 30);
     </script>
     <!-- Fire-API Minified JavaScript -->
