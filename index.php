@@ -58,7 +58,6 @@ SOFTWARE.
   // If user confirmed to join the website
   if (isset($_GET["confirm"]) && $_GET["confirm"] == "yes")
     setcookie("confirm-popup-invader", "yes", time() + 86400);  // One day cookie
-
   // If user haven't already confirmed to join the website
   if (!isset($_COOKIE["confirm-popup-invader"]) && !(isset($_GET["confirm"]) && ($_GET["confirm"] == "yes"))):
 ?>
@@ -85,13 +84,13 @@ SOFTWARE.
     <!-- Background wave -->
     <script>
       var x1 = .0, x2 = .25, x3 = .5; // x Sinus
-      var red, green, blue;           // RGB vars
+      var red, green, blue;
 
       setInterval(function() {
-        red = Math.sin(x1 += .04);    // Red next value
-        green = Math.sin(x2 += .02);  // Green next value
-        blue = Math.sin(x3 += .01);   // Blue next value
-        document.body.style.backgroundColor = "rgb(" + (191 + red * 64)  + ", " + (191 + green * 64) + ", " + (191 + blue * 64) + ")";  // Setting background color
+        red = Math.sin(x1 += .04);
+        green = Math.sin(x2 += .02);
+        blue = Math.sin(x3 += .01);
+        document.body.style.backgroundColor = "rgb(" + (191 + red * 64)  + ", " + (191 + green * 64) + ", " + (191 + blue * 64) + ")";
       }, 30);
     </script>
     <!-- Fire-API Minified JavaScript -->
