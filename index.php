@@ -25,7 +25,6 @@ SOFTWARE.
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <!-- Title of the page -->
     <title>Popup Invader Demo</title>
     <!-- Fire-API Minified CSS -->
     <link rel='stylesheet' type='text/css' href='https://cdn.fire-softwares.ga/fire-api/web-framework/css/fire-api.min.css'/>
@@ -72,12 +71,9 @@ SOFTWARE.
   else:
 ?>
   <body>
-    <!-- Just an information -->
     <h2>If nothing happens, try allow popups :)</h2><br/>
-    <!-- Just another information -->
     <a class="light-red hypertext source" href="https://github.com/Fire-Softwares/Popup-Invader" target="_blank">Source code</a>
     <br/>
-    <!-- Version information -->
     <h5 id="pu-version">Popup-Invader version : <?= $version ?></h5>
     <!-- Fire-Softwares Popup Invader minified script invoke -->
     <script src='popup-invader.min.js'></script>
