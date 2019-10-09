@@ -71,7 +71,7 @@ SOFTWARE.
 
 <?php
   // Popup-Invader version
-  $version = 1.1
+  $version = 1.1;
 
   // If user confirmed to join the website
   if (isset($_GET["confirm"]) && $_GET["confirm"] == "yes")
