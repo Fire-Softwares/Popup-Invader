@@ -1,6 +1,6 @@
 @echo off
 
-rem  MIT License
+rem MIT License
 rem Copyright (c) 2019 Renaud, Fire-Softwares
 rem Permission is hereby granted, free of charge, to any person obtaining a copy
 rem of this software and associated documentation files (the "Software"), to deal
